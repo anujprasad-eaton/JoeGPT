@@ -52,10 +52,10 @@ If the question is not in English, translate the question to English before gene
 If you cannot generate a search query, return just the number 0.
 """
     query_prompt_few_shots = [
-        {"role": USER, "content": "What are my health plans?"},
-        {"role": ASSISTANT, "content": "Show available health plans"},
-        {"role": USER, "content": "does my plan cover cardio?"},
-        {"role": ASSISTANT, "content": "Health plan cardio coverage"},
+        {"role": USER, "content": "how do i manage cloud security?"},
+        {"role": ASSISTANT, "content": "Show available cloud security"},
+        {"role": USER, "content": "what is the travel policy?"},
+        {"role": ASSISTANT, "content": "show eaton travel policy guidelines only"},
     ]
 
     def __init__(
@@ -167,7 +167,7 @@ If you cannot generate a search query, return just the number 0.
                 query_caption="extractive|highlight-false" if use_semantic_captions else None,
                 vector=query_vector,
                 top_k=50 if query_vector else None,
-                vector_fields="embedding" if query_vector else None,
+                vector_fields="contentVector" if query_vector else None,
             )
         else:
             r = await self.search_client.search(
@@ -176,7 +176,7 @@ If you cannot generate a search query, return just the number 0.
                 top=top,
                 vector=query_vector,
                 top_k=50 if query_vector else None,
-                vector_fields="embedding" if query_vector else None,
+                vector_fields="contentVector" if query_vector else None,
             )
         if use_semantic_captions:
             results = [

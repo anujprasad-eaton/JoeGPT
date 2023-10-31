@@ -5,7 +5,7 @@
 }
 
 .header {
-    background-color: #222222;
+    background-color: #046dc0;
     color: #f2f2f2;
 }
 
@@ -31,7 +31,9 @@
 
 .headerTitle {
     margin-left: 12px;
-    font-weight: 600;
+    font-weight: 800;
+    font-size: xx-large;
+    font-family: sans-serif;
 }
 
 .headerNavList {
@@ -73,6 +75,6 @@
     font-weight: 600;
 }
 
-.githubLogo {
-    height: 20px;
+.eatonlogo {
+    height: 60px;
 }

@@ -273,6 +273,7 @@ module storage 'core/storage/storage-account.bicep' = {
   }
 }
 
+/*
 // USER ROLES
 module openAiRoleUser 'core/security/role.bicep' = if (openAiHost == 'azure') {
   scope: openAiResourceGroup
@@ -344,6 +345,7 @@ module searchSvcContribRoleUser 'core/security/role.bicep' = {
   }
 }
 
+
 // SYSTEM IDENTITIES
 module openAiRoleBackend 'core/security/role.bicep' = if (openAiHost == 'azure') {
   scope: openAiResourceGroup
@@ -374,6 +376,7 @@ module searchRoleBackend 'core/security/role.bicep' = {
     principalType: 'ServicePrincipal'
   }
 }
+*/
 
 output AZURE_LOCATION string = location
 output AZURE_TENANT_ID string = tenant().tenantId

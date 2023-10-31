@@ -7,6 +7,7 @@ import time
 from pathlib import Path
 from typing import AsyncGenerator
 
+from azure.core.credentials import AzureNamedKeyCredential
 import aiohttp
 import openai
 from azure.core.exceptions import ResourceNotFoundError
@@ -203,6 +204,7 @@ async def setup_clients():
     # keys for each service
     # If you encounter a blocking error during a DefaultAzureCredential resolution, you can exclude the problematic credential by using a parameter (ex. exclude_shared_token_cache_credential=True)
     azure_credential = DefaultAzureCredential(exclude_shared_token_cache_credential=True)
+    key_credential = AzureNamedKeyCredential(name = "storage", key = "")
 
     # Set up authentication helper
     auth_helper = AuthenticationHelper(
@@ -221,7 +223,7 @@ async def setup_clients():
         credential=azure_credential,
     )
     blob_client = BlobServiceClient(
-        account_url=f"https://{AZURE_STORAGE_ACCOUNT}.blob.core.windows.net", credential=azure_credential
+        account_url=f"https://{AZURE_STORAGE_ACCOUNT}.blob.core.windows.net", credential=key_credential
     )
     blob_container_client = blob_client.get_container_client(AZURE_STORAGE_CONTAINER)
 
