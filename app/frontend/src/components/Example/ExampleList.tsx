@@ -13,7 +13,7 @@ const EXAMPLES: ExampleModel[] = [
         value: "What is Ampacity of CU Conductors?"
     },
     { text: "What size breaker do I need for the CHSPT2 surge protector?", value: "What size breaker do I need for the CHSPT2 surge protector?" },
-    { text: "what is the supplier policy on price increases?", value: "what is the supplier policy on price increases?" }
+    { text: "What is the supplier policy on price increases?", value: "What is the supplier policy on price increases?" }
 ];
 
 interface Props {
