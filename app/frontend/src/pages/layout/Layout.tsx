@@ -21,7 +21,7 @@ const Layout = () => {
                         </ul>
                     </nav>
                     <Link to="/" className={styles.headerTitleContainer}>
-                        <h2 className={styles.headerTitle}>Joe GPT</h2>
+                        <h2 className={styles.headerTitle}>JoeGPT</h2>
                     </Link>
                     {useLogin && <LoginButton />}
                 </div>
