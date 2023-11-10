@@ -194,7 +194,7 @@ async def setup_clients():
     TOKEN_CACHE_PATH = os.getenv("TOKEN_CACHE_PATH")
 
     KB_FIELDS_CONTENT = os.getenv("KB_FIELDS_CONTENT", "content")
-    KB_FIELDS_SOURCEPAGE = os.getenv("KB_FIELDS_SOURCEPAGE", "sourcepage")
+    KB_FIELDS_SOURCEPAGE = os.getenv("KB_FIELDS_SOURCEPAGE", "filepath")
 
     AZURE_SEARCH_QUERY_LANGUAGE = os.getenv("AZURE_SEARCH_QUERY_LANGUAGE", "en-us")
     AZURE_SEARCH_QUERY_SPELLER = os.getenv("AZURE_SEARCH_QUERY_SPELLER", "lexicon")
