@@ -94,6 +94,18 @@
     },
     "allowedOrigin": {
       "value": "${ALLOWED_ORIGIN}"
+    },    
+    "kbFieldsSourcePage": {
+      "value": "${KB_FIELDS_SOURCEPAGE}"    
+    },
+    "kbFieldsContent": {
+      "value": "${KB_FIELDS_CONTENT}"    
+    },
+    "kbVectorFields": {
+      "value": "${KB_VECTOR_FIELDS}"    
+    },
+    "kbSemanticConfigurationName": {
+      "value": "${KB_SEMANTIC_CONFIGURATION_NAME}"    
     }
   }
 }

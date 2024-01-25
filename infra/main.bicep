@@ -30,6 +30,10 @@ param storageResourceGroupName string = ''
 param storageResourceGroupLocation string = location
 param storageContainerName string = 'content'
 param storageSkuName string // Set in main.parameters.json
+param kbFieldsSourcePage string
+param kbFieldsContent string
+param kbVectorFields string
+param kbSemanticConfigurationName string
 
 @allowed(['azure', 'openai'])
 param openAiHost string // Set in main.parameters.json
@@ -176,6 +180,10 @@ module backend 'core/host/appservice.bicep' = {
       AZURE_TENANT_ID: tenant().tenantId
       // CORS support, for frontends on other hosts
       ALLOWED_ORIGIN: allowedOrigin
+      KB_FIELDS_SOURCEPAGE: kbFieldsSourcePage
+      KB_FIELDS_CONTENT: kbFieldsContent
+      VECTOR_FIELDS: kbVectorFields
+      KB_SEMANTIC_CONFIGURATION_NAME: kbSemanticConfigurationName
     }
   }
 }
@@ -191,7 +199,7 @@ module openAi 'core/ai/cognitiveservices.bicep' = if (openAiHost == 'azure') {
       name: openAiSkuName
     }
     deployments: [
-      {
+      /*{
         name: chatGptDeploymentName
         model: {
           format: 'OpenAI'
@@ -202,7 +210,7 @@ module openAi 'core/ai/cognitiveservices.bicep' = if (openAiHost == 'azure') {
           name: 'Standard'
           capacity: chatGptDeploymentCapacity
         }
-      }
+      }*/
       {
         name: embeddingDeploymentName
         model: {

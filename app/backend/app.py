@@ -195,9 +195,12 @@ async def setup_clients():
 
     KB_FIELDS_CONTENT = os.getenv("KB_FIELDS_CONTENT", "content")
     KB_FIELDS_SOURCEPAGE = os.getenv("KB_FIELDS_SOURCEPAGE", "filepath")
+    KB_VECTOR_FIELDS = os.getenv("VECTOR_FIELDS", "contentVector")
+    KB_SEMANTIC_CONFIGURATION_NAME = os.getenv("KB_SEMANTIC_CONFIGURATION_NAME", "default")
 
     AZURE_SEARCH_QUERY_LANGUAGE = os.getenv("AZURE_SEARCH_QUERY_LANGUAGE", "en-us")
     AZURE_SEARCH_QUERY_SPELLER = os.getenv("AZURE_SEARCH_QUERY_SPELLER", "lexicon")
+    
 
     # Use the current user identity to authenticate with Azure OpenAI, Cognitive Search and Blob Storage (no secrets needed,
     # just use 'az login' locally, and managed identity when deployed on Azure). If you need to use keys, use separate AzureKeyCredential instances with the
@@ -257,6 +260,8 @@ async def setup_clients():
         OPENAI_EMB_MODEL,
         KB_FIELDS_SOURCEPAGE,
         KB_FIELDS_CONTENT,
+        KB_VECTOR_FIELDS,
+        KB_SEMANTIC_CONFIGURATION_NAME,         
         AZURE_SEARCH_QUERY_LANGUAGE,
         AZURE_SEARCH_QUERY_SPELLER,
     )
@@ -270,8 +275,10 @@ async def setup_clients():
         OPENAI_EMB_MODEL,
         KB_FIELDS_SOURCEPAGE,
         KB_FIELDS_CONTENT,
+        KB_VECTOR_FIELDS,
+        KB_SEMANTIC_CONFIGURATION_NAME,        
         AZURE_SEARCH_QUERY_LANGUAGE,
-        AZURE_SEARCH_QUERY_SPELLER,
+        AZURE_SEARCH_QUERY_SPELLER,                
     )
 
 

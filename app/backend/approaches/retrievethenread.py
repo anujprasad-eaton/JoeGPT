@@ -59,6 +59,8 @@ info4.pdf: In-network institutions include Overlake, Swedish and others in the r
         embedding_deployment: Optional[str],  # Not needed for non-Azure OpenAI or for retrieval_mode="text"
         embedding_model: str,
         sourcepage_field: str,
+        vector_fields: str,
+        semantic_configuration_name: str,
         content_field: str,
         query_language: str,
         query_speller: str,
@@ -71,6 +73,8 @@ info4.pdf: In-network institutions include Overlake, Swedish and others in the r
         self.embedding_deployment = embedding_deployment
         self.sourcepage_field = sourcepage_field
         self.content_field = content_field
+        self.vector_fields = vector_fields
+        self.semantic_configuration_name = semantic_configuration_name
         self.query_language = query_language
         self.query_speller = query_speller
 
@@ -109,12 +113,12 @@ info4.pdf: In-network institutions include Overlake, Swedish and others in the r
                 query_type=QueryType.SEMANTIC,
                 query_language=self.query_language,
                 query_speller=self.query_speller,
-                semantic_configuration_name="default",
+                semantic_configuration_name=self.semantic_configuration_name,
                 top=top,
                 query_caption="extractive|highlight-false" if use_semantic_captions else None,
                 vector=query_vector,
                 top_k=50 if query_vector else None,
-                vector_fields="embedding" if query_vector else None,
+                vector_fields=self.vector_fields if query_vector else None,
             )
         else:
             r = await self.search_client.search(
@@ -123,7 +127,7 @@ info4.pdf: In-network institutions include Overlake, Swedish and others in the r
                 top=top,
                 vector=query_vector,
                 top_k=50 if query_vector else None,
-                vector_fields="embedding" if query_vector else None,
+                vector_fields=self.vector_fields if query_vector else None,
             )
         if use_semantic_captions:
             results = [
