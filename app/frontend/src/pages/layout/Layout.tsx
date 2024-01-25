@@ -22,7 +22,7 @@ const Layout = () => {
                     </nav>
                     <Link to="/" className={styles.headerTitleContainer}>
                         <h2 className={styles.headerTitle}>
-                            JoeGPT - <span className={styles.environment}>(Dev)</span>
+                            JoeGPT - <span className={styles.environment}>(Private)</span>
                         </h2>
                     </Link>
                     {useLogin && <LoginButton />}
