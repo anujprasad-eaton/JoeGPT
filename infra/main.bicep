@@ -182,7 +182,7 @@ module backend 'core/host/appservice.bicep' = {
       ALLOWED_ORIGIN: allowedOrigin
       KB_FIELDS_SOURCEPAGE: kbFieldsSourcePage
       KB_FIELDS_CONTENT: kbFieldsContent
-      VECTOR_FIELDS: kbVectorFields
+      KB_VECTOR_FIELDS: kbVectorFields
       KB_SEMANTIC_CONFIGURATION_NAME: kbSemanticConfigurationName
     }
   }
