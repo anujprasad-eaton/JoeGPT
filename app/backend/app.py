@@ -195,7 +195,7 @@ async def setup_clients():
 
     KB_FIELDS_CONTENT = os.getenv("KB_FIELDS_CONTENT", "content")
     KB_FIELDS_SOURCEPAGE = os.getenv("KB_FIELDS_SOURCEPAGE", "filepath")
-    KB_VECTOR_FIELDS = os.getenv("VECTOR_FIELDS", "contentVector")
+    KB_VECTOR_FIELDS = os.getenv("KB_VECTOR_FIELDS", "contentVector")
     KB_SEMANTIC_CONFIGURATION_NAME = os.getenv("KB_SEMANTIC_CONFIGURATION_NAME", "default")
 
     AZURE_SEARCH_QUERY_LANGUAGE = os.getenv("AZURE_SEARCH_QUERY_LANGUAGE", "en-us")
