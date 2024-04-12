@@ -58,7 +58,7 @@ frozenlist==1.4.0
     # via
     #   aiohttp
     #   aiosignal
-idna==3.4
+idna==3.7
     # via
     #   requests
     #   yarl
@@ -100,7 +100,9 @@ portalocker==2.8.2
 pycparser==2.21
     # via cffi
 pyjwt[crypto]==2.8.0
-    # via msal
+    # via
+    #   msal
+    #   pyjwt
 pypdf==3.16.3
     # via -r requirements.in
 python-dateutil==2.8.2
