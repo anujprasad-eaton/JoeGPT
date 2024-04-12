@@ -91,7 +91,7 @@ hypercorn==0.14.4
     # via quart
 hyperframe==6.0.1
     # via h2
-idna==3.4
+idna==3.7
     # via
     #   requests
     #   yarl
@@ -242,7 +242,9 @@ priority==2.0.0
 pycparser==2.21
     # via cffi
 pyjwt[crypto]==2.8.0
-    # via msal
+    # via
+    #   msal
+    #   pyjwt
 python-dateutil==2.8.2
     # via pandas
 pytz==2023.3.post1
