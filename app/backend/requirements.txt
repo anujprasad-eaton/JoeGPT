@@ -242,7 +242,9 @@ priority==2.0.0
 pycparser==2.21
     # via cffi
 pyjwt[crypto]==2.8.0
-    # via msal
+    # via
+    #   msal
+    #   pyjwt
 python-dateutil==2.8.2
     # via pandas
 pytz==2023.3.post1
@@ -272,7 +274,7 @@ six==1.16.0
     #   python-dateutil
 tiktoken==0.5.1
     # via -r requirements.in
-tqdm==4.66.1
+tqdm==4.66.3
     # via openai
 types-pytz==2023.3.1.1
     # via pandas-stubs
