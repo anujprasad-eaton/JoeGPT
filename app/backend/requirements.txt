@@ -106,7 +106,7 @@ itsdangerous==2.1.2
     # via
     #   flask
     #   quart
-jinja2==3.1.2
+jinja2==3.1.4
     # via
     #   flask
     #   quart
@@ -242,7 +242,9 @@ priority==2.0.0
 pycparser==2.21
     # via cffi
 pyjwt[crypto]==2.8.0
-    # via msal
+    # via
+    #   msal
+    #   pyjwt
 python-dateutil==2.8.2
     # via pandas
 pytz==2023.3.post1
